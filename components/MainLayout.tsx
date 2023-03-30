@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-// import Header from "./Header";
-// import Footer from "./Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 
 interface MainLayoutProps {
@@ -17,12 +17,12 @@ export default function MainLayout({ children, spacing = "2vw", title = "Diploma
                 <title>{title}</title>
             </Head>
             <div>
-               
+                <Header />
                 <main style={{ padding: spacing }}>
                     {children}
                     <ScrollToTop />
                 </main>
-                
+                <Footer />
             </div>
         </div>
     );
