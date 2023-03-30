@@ -10,7 +10,7 @@ interface MainLayoutProps {
     spacing?: string;
 }
 
-export default function MainLayout({ children, spacing = "2vh 5vw", title = "Diploma | Universities in Kazakhstan" }: MainLayoutProps) {
+export default function MainLayout({ children, spacing = "2vh 5vw", title = "Library | emporteme" }: MainLayoutProps) {
     return (
         <div>
             <Head>

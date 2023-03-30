@@ -1,0 +1,91 @@
+.best-sellers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+
+    .best-sellers-carousel {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        width: 100%;
+        overflow-x: hidden;
+        position: relative;
+        user-select: none;
+
+        .best-sellers-item {
+            position: relative;
+            margin-right: 1rem;
+            width: 20rem;
+            /* adjust this value based on the number of books you want to display */
+            height: 20rem;
+            border-radius: 1rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 1rem;
+            }
+
+            .best-sellers-item-details {
+                position: absolute;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.2rem;
+                border-radius: 1rem;
+
+                h3 {
+                    margin: 0;
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        &.dragging {
+            cursor: grabbing;
+        }
+    }
+
+    .best-sellers-navigation {
+        display: flex;
+        margin-top: 1rem;
+
+        button {
+            background-color: #fff;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: default;
+            }
+        }
+    }
+
+    .best-sellers-show-all {
+        margin-top: 2rem;
+
+        a {
+            background-color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
