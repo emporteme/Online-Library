@@ -12,14 +12,6 @@ export default function Header() {
 
     const router = useRouter();
 
-    /* Code for SearchBar */
-
-    const [searchResults, setSearchResults] = useState<string[]>([]);
-    const handleSearch = (query: string) => {
-        // Perform search and update search results
-        setSearchResults([]);
-    };
-
     /* Code for burger menu */
 
     const [showLinks, setShowLinks] = useState(false);
@@ -31,22 +23,22 @@ export default function Header() {
             <>
                 <Logo />
             </>
-            <div className={styles.gap}>
+            <>
                 <div className={showLinks ? `${styles.links} ${styles.show}` : `${styles.links}`}>
                     <ul className="mainText">
                         <li className={router.pathname === '/' ? `${styles.activeHeader}` : ''}><Link href="/">Home</Link></li>
-                        <li className={router.pathname === '/universities' ? `${styles.activeHeader}` : ''}><Link href="/universities">Universities</Link></li>
-                        <li className={router.pathname === '/rating' ? `${styles.activeHeader}` : ''}><Link href="/rating">Rating</Link></li>
+                        <li className={router.pathname === '/books' ? `${styles.activeHeader}` : ''}><Link href="/universities">Books</Link></li>
+                        <li className={router.pathname === '/recomendations' ? `${styles.activeHeader}` : ''}><Link href="/recomendations">Recomendations</Link></li>
                         <li className={router.pathname === '/aboutUs' ? `${styles.activeHeader}` : ''}><Link href="/aboutUs">About us</Link></li>
-                        <li className={router.pathname === '/country' ? `${styles.activeHeader}` : ''}><Link href="/country">Country</Link></li>
+                        <li className={router.pathname === '/contacts' ? `${styles.activeHeader}` : ''}><Link href="/contacts">Contacts</Link></li>
                     </ul>
                 </div>
-                <Link href={'/apply'}>
-                    <div className={router.pathname === '/apply' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
-                        <div className="mainText">Apply</div>
+                <Link href={'/login'}>
+                    <div className={router.pathname === '/login' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
+                        <div className="mainText">Login</div>
                     </div>
                 </Link>
-            </div>
+            </>
 
             <div className={showLinks ? `${styles.burger} ${styles.active}` : `${styles.burger}`} onClick={toggleShowLinks}>
                 <div></div>

@@ -13,12 +13,7 @@
     font-size: 1.5rem;
 }
 
-.gap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10vw;
-}
+
 
 .links {
     display: flex;
@@ -31,8 +26,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 3vw;
-
+    gap: 5vw;
 }
 
 .links ul li a {
@@ -81,7 +75,7 @@
 .btn {
     padding: 0.5vh 2vw;
     border: solid #9997D6;
-    border-radius: 1vw;
+    border-radius: 0.5rem;
     transition: all 0.3s ease;
     color: black;
 }
@@ -97,8 +91,6 @@
 
 .activeHeader {
     font-weight: 600;
-    border-bottom: solid 0.1rem #9997D6;
-    border-radius: 0.2rem;
 }
 
 /* Responsive styles */
