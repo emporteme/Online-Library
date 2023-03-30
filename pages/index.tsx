@@ -9,8 +9,12 @@ const inter = Montserrat({ subsets: ['latin'] })
 
 export default function Home() {
 	return (
-		<MainLayout spacing='2vw'>
-			YO HO HO HO
+		<MainLayout>
+			<div className={styles.home}>
+				<div className={styles.discount}>
+
+				</div>
+			</div>
 		</MainLayout>
 	)
 }

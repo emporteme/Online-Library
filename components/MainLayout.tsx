@@ -7,10 +7,10 @@ import ScrollToTop from "./ScrollToTop";
 interface MainLayoutProps {
     children: ReactNode;
     title?: string;
-    spacing: string;
+    spacing?: string;
 }
 
-export default function MainLayout({ children, spacing = "2vw", title = "Diploma | Universities in Kazakhstan" }: MainLayoutProps) {
+export default function MainLayout({ children, spacing = "2vh 5vw", title = "Diploma | Universities in Kazakhstan" }: MainLayoutProps) {
     return (
         <div>
             <Head>

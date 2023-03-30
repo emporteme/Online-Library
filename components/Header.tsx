@@ -20,6 +20,11 @@ export default function Header() {
     /* App */
     return (
         <nav className={styles.nav}>
+            <div className={showLinks ? `${styles.burger} ${styles.active}` : `${styles.burger}`} onClick={toggleShowLinks}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <>
                 <Logo />
             </>
@@ -40,11 +45,7 @@ export default function Header() {
                 </Link>
             </>
 
-            <div className={showLinks ? `${styles.burger} ${styles.active}` : `${styles.burger}`} onClick={toggleShowLinks}>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+
         </nav>
     );
 }
