@@ -2,9 +2,12 @@
 import MainLayout from "@/components/MainLayout"
 import mockBooks from '../../mock/books'
 import { useRouter } from 'next/router'
+import { Document, Page, pdfjs } from 'pdfjs-dist/build/pdf'
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry'
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker
 
 export default function BookDetails() {
-    
+
     // Checking the route of book
     const router = useRouter()
     const { id } = router.query;
