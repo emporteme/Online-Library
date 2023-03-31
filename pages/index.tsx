@@ -10,8 +10,7 @@ import Discount from '../components/Discount'
 import Reviews from '../components/Reviews'
 // import mock API
 import mockBooks from '../mock/mockAPI'
-
-const inter = Montserrat({ subsets: ['latin'] })
+import reviews from '../mock/reviews'
 
 export default function Home() {
 	return (
@@ -19,7 +18,7 @@ export default function Home() {
 			<div className={styles.home}>
 				<Discount />
 				<BestSellers books={mockBooks} />
-				<Reviews />
+				<Reviews reviews={reviews} />
 			</div>
 		</MainLayout>
 	)
