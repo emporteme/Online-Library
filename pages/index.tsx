@@ -9,7 +9,7 @@ import BestSellers from '../components/BestSellers'
 import Discount from '../components/Discount'
 import Reviews from '../components/Reviews'
 // import mock API
-import mockBooks from '../mock/mockAPI'
+import mockBooks from '../mock/books'
 import reviews from '../mock/reviews'
 
 export default function Home() {
