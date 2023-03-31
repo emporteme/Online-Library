@@ -7,7 +7,7 @@
     bottom: 40px;
     right: 25px;
     z-index: 20;
-    background-color: #3d383d;
+    background-color: rgb(214, 145, 163);
     border: 2px solid #fff;
     border-radius: 50%;
     height: 50px;
@@ -21,8 +21,8 @@
 .iconPositionStyle:hover {
     animation: none;
     background: #fff;
-    color: #00bbff;
-    border: 2px solid #7767e4;
+    color: #ea709b;
+    border: 2px solid rgb(224, 191, 200);
 }
 
 @keyframes movebtn {
