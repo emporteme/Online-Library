@@ -15,21 +15,22 @@ export default function Footer() {
                 <div className={styles.logo}>
                     <Logo />
                     <div className={styles.slogan}>
-                        Find Your University
+                            Access your favorite books anytime, anywhere with our online library app. Browse through a vast collection of titles and genres, and discover new books to add to your reading list. With easy-to-use features and convenient access, reading has never been more accessible. Join our community of book lovers today!
                     </div>
                 </div>
                 <div className={styles.pageLinks}>
                     <Link href={'/'}>Home</Link>
-                    <Link href={'/universities'}>Universities</Link>
-                    <Link href={'/rating'}>Rating</Link>
+                    <Link href={'/books'}>Books</Link>
+                    <Link href={'/recomendations'}>Recomendations</Link>
+                    <Link href={'/reviews'}>Reviews</Link>
                     <Link href={'/aboutUs'}>About Us</Link>
-                    <Link href={'/country'}>Country</Link>
+                    <Link href={'/contacts'}>Contacts</Link>
                 </div>
                 <div className={styles.mediaLinks}>
-                    <a href={'#'} target="_blank"><FaTelegramPlane color="white" /></a>
-                    <a href={'#'} target="_blank"><FiInstagram color="white" /></a>
-                    <a href={'#'} target="_blank"><FaLinkedinIn color="white" /></a>
-                    <a href={'#'} target="_blank"><SiGmail color="white" /></a>
+                    <a href={'https://t.me/emporteme'} target="_blank"><FaTelegramPlane />Telegram</a>
+                    <a href={'https://instagram.com/emporteme?igshid=ZDdkNTZiNTM='} target="_blank"><FiInstagram />Instagram</a>
+                    <a href={'https://www.linkedin.com/in/magzhan-karatayev-87126b243/'} target="_blank"><FaLinkedinIn />Linkedin</a>
+                    <a href={'mailto:magzhan_volk@outlook.com'} target="_blank"><SiGmail />Gmail</a>
                 </div>
                 <div className={styles.contacts}>
                     <a href="tel:+77766860652">+7 (776) 686 06 52</a>
