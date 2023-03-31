@@ -4,9 +4,9 @@ import SearchBar from '../../components/SearchBar'
 export default function Books() {
     return (
         <MainLayout title="Books | Library">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative' }}>
-                <div style={{ border: 'solid pink', borderRadius: '2rem', width: '25%' }}> <SideBar /> </div>
-                <div style={{ border: 'solid pink', borderRadius: '2rem', width: '70%' }}> <SearchBar /> </div>
+            <div style={{ display: 'flex', justifyContent:'space-between' }}>
+                <SideBar />
+                <div style={{ border: 'solid pink', borderRadius: '2rem', width: '71%' }}> <SearchBar /> </div>
             </div>
         </MainLayout >
     )
