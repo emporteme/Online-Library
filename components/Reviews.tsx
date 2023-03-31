@@ -1,8 +1,8 @@
 // Carousel
-export function Reviews() {
+export default function Reviews() {
     return (
         <>
-
+            Reviews
         </>
     )
 }

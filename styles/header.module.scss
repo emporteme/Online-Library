@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1vh 5vw;
+    padding: 3vh 5vw;
     width: 100%;
 }
 
@@ -74,18 +74,19 @@
 
 .btn {
     padding: 0.5vh 2vw;
-    border: solid #9997D6;
+    border: solid rgb(224, 191, 200);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
-    color: black;
+    color: #604A57;
 }
 
 .btn:hover {
-    background-color: #9997D650;
+    background-color: rgb(224, 191, 200);
+    color: #fff;
 }
 
 .activeBtn {
-    background-color: #9997D6;
+    background-color: #15499f;
     color: white;
 }
 
