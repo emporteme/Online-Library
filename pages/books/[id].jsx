@@ -16,7 +16,13 @@ const BookDetail = () => {
     const book = getBookById(id);
 
     if (!book) {
-        return <MainLayout>Book not found</MainLayout>;
+        return (
+            <MainLayout>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem', textAlign: 'center' }}>
+                    Book not found
+                </div>
+            </MainLayout>
+        )
     }
 
     const fileUrl = `/${book.fileUrl}`;

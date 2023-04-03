@@ -3,6 +3,8 @@ import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
+import Breadcrumbs from "./Breadcrumbs"
+
 
 interface MainLayoutProps {
     children: ReactNode;
@@ -19,6 +21,7 @@ export default function MainLayout({ children, spacing = "2vh 5vw", title = "Lib
             <div>
                 <Header />
                 <main style={{ padding: spacing }}>
+                    <Breadcrumbs />
                     {children}
                     <ScrollToTop />
                 </main>
