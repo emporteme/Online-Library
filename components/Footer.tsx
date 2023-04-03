@@ -43,7 +43,7 @@ export default function Footer() {
             <div className={styles.line} />
             <div className={styles.copyright}>
                 <AiOutlineCopyrightCircle />
-                <div className='mainText'>Copyright.  All rights reserved</div>
+                <div className='mainText'>Copyright.  All rights reserved | 31.03.2023</div>
             </div>
         </div>
     )

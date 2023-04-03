@@ -24,6 +24,7 @@ export default function Contacts() {
                         <p>Zhelisbayeba 69, Taraz, Kazakhstan</p>
                     </div>
                 </div>
+                <div className={styles.line}></div>
                 <p>
                     You can also stay updated on the latest news, releases, and promotions by connecting with us on the following social media platforms:
                 </p>
