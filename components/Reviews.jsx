@@ -67,19 +67,21 @@ export default function Reviews({ reviews }) {
                         {reviews.map((review) => {
                             console.log(review)
                             return (
-                                <div key={review.id} className={styles.review}>
-                                    <div className={styles.up}>
-                                        <div className={styles.left}>
-                                            <div className={styles.icon}>
-                                                <img src="/book-girl.png" alt="book-girl" />
+                                <Link href={'/reviews'} key={review.id}>
+                                    <div className={styles.review}>
+                                        <div className={styles.up}>
+                                            <div className={styles.left}>
+                                                <div className={styles.icon}>
+                                                    <img src="/book-girl.png" alt="book-girl" />
+                                                </div>
+                                                <div className="mainText">{review.username}</div>
                                             </div>
-                                            <div className="mainText">{review.username}</div>
+                                            <div className={styles.rating}>rating: {review.rating}</div>
                                         </div>
-                                        <div className={styles.rating}>rating: {review.rating}</div>
+                                        <div className="subText">{review.comment}</div>
+                                        <div className={styles.date}>{review.date}</div>
                                     </div>
-                                    <div className="subText">{review.comment}</div>
-                                    <div className={styles.date}>{review.date}</div>
-                                </div>
+                                </Link>
                             )
                         })}
                     </div>

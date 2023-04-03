@@ -36,7 +36,7 @@ const BestSellers = ({ books }) => {
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', alignItems: 'center' }}>
                     <>
                         <div className={styles['best-sellers-show-all']}>
-                            <Link href="/books?filter=bestsellers">
+                            <Link href="/books">
                                 <>Show All</>
                             </Link>
                         </div>
@@ -65,13 +65,15 @@ const BestSellers = ({ books }) => {
                     {books.map((book) => {
                         console.log(book)
                         return (
-                            <div key={book.id} className={styles['best-sellers-item']}>
-                                <img src={book.image} alt={book.title} />
-                                <div className={styles['best-sellers-item-details']}>
-                                    <h3>{book.title}</h3>
-                                    <p>by {book.author}</p>
+                            <Link href={`/books/${book.id}`} key={book.id} >
+                                <div className={styles['best-sellers-item']}>
+                                    <img src={book.image} alt={book.title} />
+                                    <div className={styles['best-sellers-item-details']}>
+                                        <h3>{book.title}</h3>
+                                        <p>by {book.author}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
 
