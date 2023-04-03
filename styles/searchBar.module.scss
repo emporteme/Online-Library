@@ -1,12 +1,11 @@
 .unik {
     padding: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 2rem;
     flex: 1;
-    border: solid blue;
 
     .search {
         width: 50%;
@@ -14,7 +13,8 @@
         input {
             width: 100%;
             border-radius: 0.5rem;
-            padding: 0.1rem 0.5rem;
+            padding: 0.3rem 0.5rem;
+            border: solid #604A57;
         }
     }
 

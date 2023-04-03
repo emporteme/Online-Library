@@ -1,14 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link'
-import { useState } from 'react'
-import mockBooks from '../data/books'
-import styles from '../styles/searchBar.module.scss'
+import Link from "next/link";
+import { useState } from "react";
+import styles from "../styles/searchBar.module.scss";
 
-export default function SearchBar() {
+export default function SearchBar({ books }) {
+    const [search, setSearch] = useState("");
 
-    // Code for search
-    const [search, setSearch] = useState('')  // Search field
-    console.log(search)
+    const filteredBooks = books.filter((book) => {
+        return (
+            book.title.toLowerCase().includes(search.toLowerCase()) ||
+            book.author.toLowerCase().includes(search.toLowerCase()) ||
+            book.description.toLowerCase().includes(search.toLowerCase()) ||
+            book.genre.toLowerCase().includes(search.toLowerCase())
+        );
+    });
 
     return (
         <>
@@ -17,47 +22,25 @@ export default function SearchBar() {
                     <input
                         type="text"
                         onChange={(e) => setSearch(e.target.value)}
-                        placeholder='Search here...' />
+                        placeholder="Search here..."
+                    />
                 </div>
                 <div className={styles.list}>
-                    {mockBooks.filter((API) => {
-                        return (
-                            API
-                                .title
-                                .toLowerCase()
-                                .includes(search.toLowerCase()) ||
-                            API
-                                .author
-                                .toLowerCase()
-                                .includes(search.toLowerCase()) ||
-                            API
-                                .description
-                                .toLowerCase()
-                                .includes(search.toLowerCase()) ||
-                            API
-                                .genre
-                                .toLowerCase()
-                                .includes(search.toLowerCase())
-                        )
-                        {/*search.toLowerCase() === ''
-							? API
-						: API.unik_name.toLowerCase().includes(search);*/}
-                    }).map((book) => {
-                        console.log(book)
+                    {filteredBooks.map((book) => {
                         return (
                             <Link href={`/books/${book.id}`} key={book.id}>
-                                <div className={styles['best-sellers-item']}>
+                                <div className={styles["best-sellers-item"]}>
                                     <img src={book.image} alt={book.title} />
-                                    <div className={styles['best-sellers-item-details']}>
+                                    <div className={styles["best-sellers-item-details"]}>
                                         <h3>{book.title}</h3>
                                         <p>by {book.author}</p>
                                     </div>
                                 </div>
                             </Link>
-                        )
+                        );
                     })}
                 </div>
             </div>
         </>
-    )
+    );
 }

@@ -6,6 +6,24 @@
     padding: 2rem;
     border-radius: 2rem;
     overflow-y: scroll;
+    cursor: pointer;
+}
 
-    
+.filter {
+    margin-top: 2rem;
+    color: #604A57;
+
+    .filterTitle {
+        font-size: 1.2rem;
+    }
+}
+
+.dropdown {
+
+    input {
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+        border: #604A57 solid 0.1rem;
+        padding: 0.3rem 1rem;
+    }
 }

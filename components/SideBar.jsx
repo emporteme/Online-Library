@@ -3,7 +3,19 @@ import { useState } from 'react';
 import mockBooks from '../data/books'
 
 
-export default function SideBar() {
+export default function SideBar({ onFilterChange }) {
+
+    // Taking props from books page
+    const handleCheckboxChange = (type, value, isChecked) => {
+        if (isChecked) {
+            onFilterChange(type, (prev) => [...prev, value]);
+        } else {
+            onFilterChange(type, (prev) => prev.filter((item) => item !== value));
+        }
+    };
+
+    // ...
+
 
     // Code for search
     const [search, setSearch] = useState('')  // Search field
@@ -35,6 +47,7 @@ export default function SideBar() {
         <>
             <div className={styles.sidebar}>
                 <div className={styles.filters}>
+                    <div className='subHeader'>Filter</div>
                     <div className={styles.filter}>
                         <div className={styles.filterTitle} onClick={toggleAuthorDropdown}>
                             Authors
@@ -54,24 +67,26 @@ export default function SideBar() {
                                     onChange={(e) => setSearch(e.target.value)}
                                 />
                                 <div className={styles.checkboxGroup}>
-                                    {mockBooks.filter((API) => {
-                                        return (
-                                            API
-                                                .author
-                                                .toLowerCase()
-                                                .includes(search.toLowerCase())
-                                        )
-                                    }).map((book) => {
-                                        console.log(book)
-                                        return (
-                                            <div key={book.id}>
-                                                <label label >
-                                                    <input type="checkbox" />
-                                                    <span>{book.author}</span>
-                                                </label>
-                                            </div>
-                                        )
-                                    })}
+                                    {mockBooks
+                                        .filter((API) => {
+                                            return API.author.toLowerCase().includes(search.toLowerCase());
+                                        })
+                                        .map((book) => {
+                                            console.log(book)
+                                            return (
+                                                <div key={book.id}>
+                                                    <label>
+                                                        <input
+                                                            type="checkbox"
+                                                            onChange={(e) =>
+                                                                handleCheckboxChange("author", book.author, e.target.checked)
+                                                            }
+                                                        />
+                                                        <span>{book.author}</span>
+                                                    </label>
+                                                </div>
+                                            );
+                                        })}
                                 </div>
                             </div>
                         )}
@@ -107,7 +122,12 @@ export default function SideBar() {
                                         return (
                                             <div key={book.id}>
                                                 <label label >
-                                                    <input type="checkbox" />
+                                                    <input
+                                                        type="checkbox"
+                                                        onChange={(e) =>
+                                                            handleCheckboxChange("title", book.title, e.target.checked)
+                                                        }
+                                                    />
                                                     <span>{book.title}</span>
                                                 </label>
                                             </div>
@@ -119,7 +139,7 @@ export default function SideBar() {
                     </div>
                     <div className={styles.filter}>
                         <div className={styles.filterTitle} onClick={toggleGenreDropdown}>
-                        Genres
+                            Genres
                             <span
                                 className={
                                     isGenreDropdownOpen
@@ -148,7 +168,12 @@ export default function SideBar() {
                                         return (
                                             <div key={book.id}>
                                                 <label label >
-                                                    <input type="checkbox" />
+                                                    <input
+                                                        type="checkbox"
+                                                        onChange={(e) =>
+                                                            handleCheckboxChange("genre", book.genre, e.target.checked)
+                                                        }
+                                                    />
                                                     <span>{book.genre}</span>
                                                 </label>
                                             </div>
