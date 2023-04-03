@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import MainLayout from "@/components/MainLayout"
-import mockBooks from '../../mock/books'
+import mockBooks from '../../data/books'
 import { useRouter } from 'next/router'
 
 export default function BookDetails() {

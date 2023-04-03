@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import { useState } from 'react'
-import mockBooks from '../mock/books'
+import mockBooks from '../data/books'
 import styles from '../styles/searchBar.module.scss'
 
 export default function SearchBar() {

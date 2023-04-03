@@ -9,8 +9,8 @@ import BestSellers from '../components/BestSellers'
 import Discount from '../components/Discount'
 import Reviews from '../components/Reviews'
 // import mock API
-import mockBooks from '../mock/books'
-import reviews from '../mock/reviews'
+import mockBooks from '../data/books'
+import reviews from '../data/reviews'
 
 export default function Home() {
 	return (

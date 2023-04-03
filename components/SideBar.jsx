@@ -1,6 +1,6 @@
 import styles from '../styles/sideBar.module.scss'
 import { useState } from 'react';
-import mockBooks from '../mock/books'
+import mockBooks from '../data/books'
 
 
 export default function SideBar() {
