@@ -27,35 +27,8 @@
     position: relative;
 }
 
-
-
-.pageLinks {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: start;
-    gap: 1vh;
-}
-
-.pageLinks a {
-    color: #604A57;
-}
-
-.mediaLinks {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: start;
-    gap: 1vh;
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-}
-
+.pageLinks,
+.mediaLinks,
 .contacts {
     display: flex;
     align-items: center;
@@ -64,8 +37,16 @@
     gap: 1vh;
 }
 
+.pageLinks a,
 .contacts a {
     color: #604A57;
+}
+
+.mediaLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .line {
@@ -79,14 +60,84 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5vw;
-}
+    gap: 0.5rem;
 
-/* Responsive styles */
-@media screen and (max-width: 776px) {
-    .info {
-        flex-wrap: wrap;
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.2rem;
     }
 }
 
-@media screen and (max-width: 480px) {}
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+    .info {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .logo {
+        width: 48%;
+    }
+
+    .pageLinks,
+    .mediaLinks,
+    .contacts {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .info {
+        gap: 2rem;
+    }
+
+    .logo,
+    .pageLinks,
+    .mediaLinks,
+    .contacts {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        flex-direction: column;
+    }
+
+    .slogan {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .pageLinks,
+    .mediaLinks,
+    .contacts {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer {
+        padding: 1rem 2.5vw;
+    }
+
+    .logo {
+        align-items: center;
+    }
+
+    .slogan {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 0;
+    }
+}

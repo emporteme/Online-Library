@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className={styles.logo}>
                     <Logo />
                     <div className={styles.slogan}>
-                            Access your favorite books anytime, anywhere with our online library app. Browse through a vast collection of titles and genres, and discover new books to add to your reading list. With easy-to-use features and convenient access, reading has never been more accessible. Join our community of book lovers today!
+                        Access your favorite books anytime, anywhere with our online library app. Browse through a vast collection of titles and genres, and discover new books to add to your reading list. With easy-to-use features and convenient access, reading has never been more accessible. Join our community of book lovers today!
                     </div>
                 </div>
                 <div className={styles.pageLinks}>
@@ -42,8 +42,11 @@ export default function Footer() {
             </div>
             <div className={styles.line} />
             <div className={styles.copyright}>
-                <AiOutlineCopyrightCircle />
-                <div className='mainText'>Copyright.  All rights reserved | 31.03.2023</div>
+                <div>
+                    <AiOutlineCopyrightCircle />
+                    <div className='mainText'>Copyright.</div>
+                </div>
+                <div>All rights reserved | 31.03.2023</div>
             </div>
         </div>
     )
