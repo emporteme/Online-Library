@@ -120,7 +120,7 @@
         left: 0;
         width: 100%;
         height: calc(100% - 5rem);
-        background-color: #7ce3ff;
+        background-color: rgba(224, 191, 200);
         padding: 2rem;
         display: none;
         transition: all 0.3s ease-in-out;
@@ -144,13 +144,12 @@
         cursor: pointer;
         width: 2rem;
         height: 2rem;
-
     }
 
     .burger div {
         width: 2.5rem;
         height: 0.2rem;
-        background-color: #000000;
+        background-color: rgb(224, 176, 189);
         transition: all 0.3s ease;
         transform-origin: 4px 0px;
         border-radius: 1rem;
