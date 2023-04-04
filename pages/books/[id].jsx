@@ -17,7 +17,7 @@ const BookDetail = () => {
 
     if (!book) {
         return (
-            <MainLayout>
+            <MainLayout extraSegments={["Not Found"]}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem', textAlign: 'center' }}>
                     Book not found
                 </div>
@@ -28,7 +28,7 @@ const BookDetail = () => {
     const fileUrl = `/${book.fileUrl}`;
 
     return (
-        <MainLayout>
+        <MainLayout bookTitle={book.title} extraSegments={[book.title]} skipLastSegment={true}>
             <div>
                 <img src={book.image} alt={book.title} />
                 <h1>{book.title}</h1>
@@ -39,6 +39,8 @@ const BookDetail = () => {
         </MainLayout>
     );
 };
+
+
 
 export default BookDetail;
 
