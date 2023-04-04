@@ -55,8 +55,8 @@ export default function Header() {
                         <div className="mainText">
                             {isAuthenticated ? (
                                 <>
-                                    <span>Welcome, {currentUser.username}!</span>
-                                    <button onClick={handleLogout}>Logout</button>
+                                    <span>Welcome, {currentUser.username}! </span>
+                                    <span onClick={handleLogout}>Logout</span>
                                 </>
                             ) : (
                                 <>
