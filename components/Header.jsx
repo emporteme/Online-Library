@@ -3,10 +3,21 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 //import { FaUser, FaBars } from "react-icons/fa";
 //import SearchBar from "../components/SearchBar";
-import { Logo } from '../components/Logo'
+import { Logo } from './Logo';
 import styles from "../styles/header.module.scss";
+import { useSelector, useDispatch } from 'react-redux';  // Redux login register
+import { logout } from '../redux/reducers/authSlice';
 
 export default function Header() {
+
+    // Code to show username when it logins
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+    const currentUser = useSelector((state) => state.auth.currentUser);
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());
+    };
 
     /* Code for headerActive class */
 
@@ -41,7 +52,18 @@ export default function Header() {
                 </div>
                 <Link href={'/login'}>
                     <div className={router.pathname === '/login' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
-                        <div className="mainText">Login</div>
+                        <div className="mainText">
+                            {isAuthenticated ? (
+                                <>
+                                    <span>Welcome, {currentUser.username}!</span>
+                                    <button onClick={handleLogout}>Logout</button>
+                                </>
+                            ) : (
+                                <>
+                                    Login
+                                </>
+                            )}
+                        </div>
                     </div>
                 </Link>
             </>

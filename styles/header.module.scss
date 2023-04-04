@@ -5,10 +5,6 @@
     justify-content: space-between;
     padding: 3vh 5vw 0;
     width: 100%;
-    // position: fixed;
-    // top: 0;
-    // z-index: 1;
-    // background-color: rgba(224, 191, 200, 0.20);
 }
 
 .logo {
@@ -17,13 +13,10 @@
     font-size: 1.5rem;
 }
 
-
-
 .links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .links ul {
@@ -34,7 +27,7 @@
 }
 
 .links ul li a {
-    color: black;
+    color: #604A57;
     transition: all 0.3s ease;
 }
 
@@ -99,7 +92,7 @@
 }
 
 /* Responsive styles */
-@media screen and (max-width: 776px) {
+@media screen and (max-width: 992px) {
     .nav {
         flex-wrap: wrap;
     }
@@ -166,7 +159,6 @@
     .burger.active div:last-child {
         transform: rotate(-45deg) translate(0, 0);
     }
-
 }
 
 @media screen and (max-width: 480px) {

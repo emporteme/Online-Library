@@ -63,7 +63,7 @@ export default function Breadcrumbs({ bookTitle, extraSegments = [], skipLastSeg
                         <React.Fragment key={segment}>
                             <span>{' > '}</span>
                             <Link href={href}>
-                                <div className="mainText" style={{ color: 'black' }}>
+                                <div className="mainText" style={{ color: '#604A57' }}>
                                     {' '}
                                     {label}
                                 </div>
