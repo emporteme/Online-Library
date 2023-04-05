@@ -27,3 +27,9 @@
         padding: 0.3rem 1rem;
     }
 }
+
+@media (max-width:786px) {
+    .sidebar {
+        display: none;
+    }
+}

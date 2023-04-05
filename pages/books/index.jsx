@@ -37,7 +37,17 @@ export default function Books() {
             <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <SideBar onFilterChange={handleFilterChange} />
                 <SearchBar books={filteredBooks} />
+                <style jsx>
+                    {`
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        align-items: center;
+                        flex-wrap:wrap;
+                    }
+                `}
+                </style>
             </div>
+
         </MainLayout>
     );
 }

@@ -72,10 +72,62 @@
     }
 }
 
+@media screen and (max-width:1200px) {
+    .unik {
+        .search {
+            width: 80%
+        }
+
+        .list {
+            justify-content: center;
+            gap: 1rem;
+
+            .best-sellers-item {
+                position: relative;
+                width: 13rem;
+                /* adjust this value based on the number of books you want to display */
+                height: 19rem;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:786px) {
     .unik {
         .search {
             width: 100%
+        }
+
+        .list {
+            justify-content: center;
+            gap: 1rem;
+
+            .best-sellers-item {
+                position: relative;
+                width: 12rem;
+                /* adjust this value based on the number of books you want to display */
+                height: 18rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .unik {
+        .search {
+            width: 100%
+        }
+
+        .list {
+            justify-content: center;
+            gap: 0.5rem;
+
+            .best-sellers-item {
+                position: relative;
+                width: 9rem;
+                /* adjust this value based on the number of books you want to display */
+                height: 14rem;
+            }
         }
     }
 }
