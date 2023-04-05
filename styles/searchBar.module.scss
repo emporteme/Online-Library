@@ -72,8 +72,10 @@
     }
 }
 
-@media(max-width:786px) {
-    .search {
-        width: 100%
+@media screen and (max-width:786px) {
+    .unik {
+        .search {
+            width: 100%
+        }
     }
 }
