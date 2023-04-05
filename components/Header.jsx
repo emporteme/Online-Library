@@ -53,8 +53,8 @@ export default function Header() {
                 </div>
                 <Link href={'/login'}>
                     <div className={router.pathname === '/login' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
-                        <div className="mainText">
-                            <AiOutlineUser size={20}/>
+                        <div className="mainText" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <AiOutlineUser size={20} />
                         </div>
                     </div>
                 </Link>
