@@ -51,11 +51,10 @@ export default function Header() {
                     </ul>
                 </div>
                 <Link href={'/login'}>
-                    <div className={router.pathname === '/login' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
+                    <div className={router.pathname === '/login'  ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
                         <div className="mainText">
                             {isAuthenticated ? (
                                 <>
-                                    <span>Welcome, {currentUser.username}! </span>
                                     <span onClick={handleLogout}>Logout</span>
                                 </>
                             ) : (
