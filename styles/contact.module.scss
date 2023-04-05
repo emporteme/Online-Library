@@ -1,7 +1,7 @@
 .contact-us {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding: 1rem 1.5rem;
+    padding: 1rem 7rem;
     color: #604A57;
     font-size: 1.2rem;
     gap: 1rem;
@@ -88,5 +88,17 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width:1024px) {
+    .contact-us {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width:768px) {
+    .contact-us {
+        padding: 1rem 0;
     }
 }
