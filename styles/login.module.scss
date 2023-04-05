@@ -1,0 +1,63 @@
+// login.module.scss
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    margin-top: -5vh;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(224, 191, 200, 0.7);
+    max-width: 40rem;
+    width: 100%;
+    // margin: 0 20px;
+
+    h1 {
+        margin-bottom: 1rem;
+        color: #604A57;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        input {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgb(224, 191, 200);
+            width: 100%;
+        }
+
+        button {
+            margin: 0 auto;
+            background-color: rgb(224, 191, 200);
+            color: #604A57;
+            padding: 0.4rem 2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                border: solid #604A57;
+                background-color: #fff;
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .loginForm {
+        padding: 1rem;
+    }
+}

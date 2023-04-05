@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { login } from '../../redux/reducers/authSlice';
 import MainLayout from '@/components/MainLayout'; // Main Layout
+import styles from '../../styles/login.module.scss'; // Import the SCSS styles
+import Link from 'next/link';
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -19,22 +21,27 @@ const LoginPage = () => {
 
     return (
         <MainLayout>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Login</button>
-            </form>
+            <div className={styles.loginContainer}>
+                <div className={styles.loginForm}>
+                    <h1>Login</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <button type="submit">Login</button>
+                    </form>
+                    <Link href={'/register'} style={{ marginTop: '0.5rem' }}>If not registered. Click</Link>
+                </div>
+            </div>
         </MainLayout>
     );
 };

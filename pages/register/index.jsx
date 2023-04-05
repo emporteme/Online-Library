@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { register } from '../../redux/reducers/authSlice';
 import MainLayout from "@/components/MainLayout" // Main Layout
+import styles from '../../styles/login.module.scss'; // Import the SCSS styles
 
 const RegisterPage = () => {
     const [username, setUsername] = useState('');
@@ -19,22 +20,26 @@ const RegisterPage = () => {
 
     return (
         <MainLayout>
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Register</button>
-            </form>
+            <div className={styles.loginContainer}>
+                <div className={styles.loginForm}>
+                    <h1>Register</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
         </MainLayout>
     );
 };
