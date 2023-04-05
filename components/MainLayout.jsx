@@ -18,7 +18,7 @@ export default function MainLayout({ children, spacing = "2vh 5vw", title = "Lib
                 <Header />
                 <main style={{ padding: spacing }}>
                     {/* Conditionally render the Breadcrumbs component with the bookTitle prop */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <Breadcrumbs
                             bookTitle={bookTitle}
                             extraSegments={extraSegments}
