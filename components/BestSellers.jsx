@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 // Carousel
-import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from '../styles/bestSellers.module.scss';
 
 const BestSellers = ({ books }) => {
-    const [currentSlide, setCurrentSlide] = React.useState(0);
-    const [transitionEnabled, setTransitionEnabled] = React.useState(true);
-    const carouselRef = React.useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [transitionEnabled, setTransitionEnabled] = useState(true);
+    const carouselRef = useRef(null);
 
     const handleTransitionEnd = () => {
         setTransitionEnabled(true);
@@ -29,11 +29,59 @@ const BestSellers = ({ books }) => {
         }
     };
 
+    // Add a touchStart event listener
+    const handleTouchStart = (e) => {
+        const touchX = e.touches[0].clientX;
+        const scrollLeft = carouselRef.current.scrollLeft;
+        carouselRef.current.ontouchmove = (e) => {
+            const newX = e.touches[0].clientX;
+            const diff = touchX - newX;
+            carouselRef.current.scrollLeft = scrollLeft + diff;
+        };
+    };
+
+    // Add a touchEnd event listener
+    const handleTouchEnd = () => {
+        carouselRef.current.ontouchmove = null;
+    };
+
+    // Add a mouseDown event listener
+    const handleMouseDown = (e) => {
+        const mouseX = e.clientX;
+        const scrollLeft = carouselRef.current.scrollLeft;
+        carouselRef.current.onmousemove = (e) => {
+            const newX = e.clientX;
+            const diff = mouseX - newX;
+            carouselRef.current.scrollLeft = scrollLeft + diff;
+        };
+    };
+
+    // Add a mouseUp event listener
+    const handleMouseUp = () => {
+        carouselRef.current.onmousemove = null;
+    };
+
+    useEffect(() => {
+        const carouselElement = carouselRef.current;
+        carouselElement.addEventListener('touchstart', handleTouchStart);
+        carouselElement.addEventListener('touchend', handleTouchEnd);
+        carouselElement.addEventListener('mousedown', handleMouseDown);
+        carouselElement.addEventListener('mouseup', handleMouseUp);
+
+        return () => {
+            carouselElement.removeEventListener('touchstart', handleTouchStart);
+            carouselElement.removeEventListener('touchend', handleTouchEnd);
+            carouselElement.removeEventListener('mousedown', handleMouseDown);
+            carouselElement.removeEventListener('mouseup', handleMouseUp);
+        };
+    }, []);
+
+
     return (
         <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div className="subHeader">Best sellers</div>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
                     <>
                         <div className={styles['best-sellers-show-all']}>
                             <Link href="/books">
@@ -62,7 +110,7 @@ const BestSellers = ({ books }) => {
                     onTransitionEnd={handleTransitionEnd}
                     ref={carouselRef}
                 >
-                    {books.map((book) => {
+                    {books.slice(0, 10).map((book) => {
                         console.log(book)
                         return (
                             <Link href={`/books/${book.id}`} key={book.id} >
