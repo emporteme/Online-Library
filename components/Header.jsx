@@ -7,6 +7,7 @@ import { Logo } from './Logo';
 import styles from "../styles/header.module.scss";
 import { useSelector, useDispatch } from 'react-redux';  // Redux login register
 import { logout } from '../redux/reducers/authSlice';
+import { AiOutlineUser } from 'react-icons/ai' // Icons
 
 export default function Header() {
 
@@ -53,7 +54,7 @@ export default function Header() {
                 <Link href={'/login'}>
                     <div className={router.pathname === '/login' ? `${styles.activeBtn} ${styles.btn}` : `${styles.btn}`} >
                         <div className="mainText">
-                            Account
+                            <AiOutlineUser size={20}/>
                         </div>
                     </div>
                 </Link>

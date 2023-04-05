@@ -70,11 +70,15 @@
 }
 
 .btn {
-    padding: 0.5vh 2vw;
+    padding: 0.2rem 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: solid rgb(224, 191, 200);
     border-radius: 0.5rem;
     transition: all 0.3s ease;
     color: #604A57;
+    background-color: #fff;
 }
 
 .btn:hover {
